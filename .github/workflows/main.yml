@@ -1,0 +1,22 @@
+```yaml
+name: HTML тексеру
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Репозиторийді жүктеу
+        uses: actions/checkout@v4
+
+      - name: HTML файлын тексеру
+        run: |
+          test -f index.html
+          echo "HTML файлы табылды!"
+          echo "GitHub Actions сәтті орындалды!"
+```
